@@ -1,0 +1,375 @@
+/* ==========================================================================
+   Poli Noticias — dirección de color 1b "Archivo"
+   Sistema de diseño: Broadsheet
+   Papel prensa cálido, verde y bermellón. Tono de diario de registro.
+   Maqueta visual — sin funcionalidad.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+
+/* --- Tokens ------------------------------------------------------------- */
+
+:root {
+  /* Paleta 1b — Archivo */
+  --color-bg: #f4efe3;        /* papel */
+  --color-text: #231f1a;      /* tinta */
+  --color-accent: #146b5b;    /* verde */
+  --color-accent-2: #b03a22;  /* bermellón */
+
+  --color-ground: #e6e4e2;    /* mesa sobre la que reposa el pliego */
+  --color-divider: color-mix(in srgb, var(--color-text) 16%, transparent);
+
+  /* Tipografía del sistema */
+  --font-heading: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, Menlo, Consolas, monospace;
+  --font-heading-weight: 600;
+
+  /* Escala de espaciado */
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 15px;
+  --space-4: 20px;
+  --space-6: 30px;
+  --space-8: 40px;
+
+  --radius-sm: 1px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+
+  --shadow-sm: 0 1px 3px color-mix(in srgb, var(--color-text) 16%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, var(--color-text) 16%, transparent);
+
+  /* Reglas horizontales del pliego */
+  --rule-heavy: 10px;
+  --rule-mid: 3px;
+  --rule-hair: 1px;
+
+  --page-width: 1008px;
+}
+
+/* --- Base --------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: var(--space-8) var(--space-4);
+  background: var(--color-ground);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  margin: 0;
+}
+
+p,
+figure,
+figcaption,
+blockquote {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- El pliego ---------------------------------------------------------- */
+
+.sheet {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 36px 36px 42px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Cabecera / masthead ------------------------------------------------ */
+
+.masthead {
+  border-top: var(--rule-heavy) solid var(--color-text);
+  padding-top: 17px;
+}
+
+.masthead__row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.masthead__title {
+  font-size: clamp(42px, 7.2vw, 73px);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.masthead__meta {
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  text-align: right;
+  line-height: 1.6;
+}
+
+/* --- Barra de secciones ------------------------------------------------- */
+
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 31px;
+  margin-top: 17px;
+  padding: 10px 0;
+  border-top: var(--rule-mid) solid var(--color-text);
+  border-bottom: var(--rule-hair) solid var(--color-text);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sections__item--active {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* --- Apertura ----------------------------------------------------------- */
+
+.lead {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 36px;
+  margin-top: 36px;
+}
+
+.kicker {
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 11px;
+}
+
+.kicker--alt {
+  color: var(--color-accent-2);
+}
+
+.lead__title {
+  font-size: clamp(34px, 5.3vw, 53px);
+  margin: 0 0 14px;
+}
+
+.lead__standfirst {
+  font-size: 21px;
+  opacity: 0.8;
+  margin: 0 0 17px;
+}
+
+.byline {
+  font-size: 17px;
+  opacity: 0.55;
+}
+
+/* --- Marcador de foto (placeholder rayado) ------------------------------ */
+
+.photo {
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  background: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-text) 20%, var(--color-bg)) 0 8px,
+    color-mix(in srgb, var(--color-text) 9%, var(--color-bg)) 8px 17px
+  );
+}
+
+.photo--lead {
+  height: 266px;
+}
+
+.photo--article {
+  height: 294px;
+  margin-bottom: 31px;
+}
+
+.photo__tag {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  background: var(--color-bg);
+  padding: 4px 7px;
+}
+
+.caption {
+  font-size: 15px;
+  margin-top: 8px;
+  opacity: 0.55;
+}
+
+/* --- Rejilla secundaria ------------------------------------------------- */
+
+.stories {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 34px;
+  margin-top: 48px;
+}
+
+.story__kicker {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.story__title {
+  font-size: 27px;
+  margin: 0 0 8px;
+}
+
+.story__summary {
+  font-size: 18px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* --- Artículo ----------------------------------------------------------- */
+
+.article-head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: 42px;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.article {
+  max-width: 784px;
+}
+
+.article__title {
+  font-size: clamp(32px, 4.9vw, 50px);
+  margin: 0 0 17px;
+}
+
+.article__standfirst {
+  font-size: 24px;
+  opacity: 0.8;
+  margin: 0 0 22px;
+}
+
+.article__byline {
+  font-size: 17px;
+  opacity: 0.55;
+  margin-bottom: 31px;
+}
+
+.article__body {
+  font-size: 21px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.article__body:last-child {
+  margin-bottom: 0;
+}
+
+.pullquote {
+  font-size: 31px;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-accent-2);
+  margin: 34px 0;
+}
+
+/* --- Pie ---------------------------------------------------------------- */
+
+.colophon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: 48px;
+  padding-top: 14px;
+  border-top: var(--rule-hair) solid var(--color-divider);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* --- Adaptación a pantallas estrechas ----------------------------------- */
+
+@media (max-width: 860px) {
+  .lead,
+  .stories {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .stories {
+    margin-top: 34px;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: var(--space-3) 0;
+  }
+
+  .sheet {
+    padding: 22px 20px 28px;
+  }
+
+  .masthead__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .masthead__meta {
+    text-align: left;
+  }
+
+  .sections {
+    gap: var(--space-3);
+    font-size: 13px;
+  }
+
+  .article__body,
+  .lead__standfirst {
+    font-size: 19px;
+  }
+
+  .pullquote {
+    font-size: 25px;
+  }
+}

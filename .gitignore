@@ -1,0 +1,20 @@
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Dependencias y builds (por si más adelante se añaden)
+node_modules/
+dist/
+build/
+*.log
+
+# Config local de la sesión
+.claude/

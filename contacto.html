@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto · Poli Noticias</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="header">
+ <div class="contenedor">
+  <div class="header__top">
+   <a class="logo" href="index.html">Poli Noticias</a>
+   <form class="buscador" role="search" id="form-buscador">
+    <label class="sr-only" for="q">Buscar noticias</label>
+    <input type="search" id="q" placeholder="Buscar noticias">
+    <button class="btn btn--verde" type="submit">Buscar</button>
+   </form>
+   <div class="edicion" id="fecha-edicion">Edición nacional</div>
+  </div>
+  <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="noticias.html">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html" aria-current="page">Contacto</a><span class="nav__sep"></span><a class="nav__cat" href="noticias.html?categoria=educación">Educación</a><a class="nav__cat" href="noticias.html?categoria=tecnológica">Tecnológica</a><a class="nav__cat" href="noticias.html?categoria=turismo">Turismo</a><a class="nav__cat" href="noticias.html?categoria=comercio">Comercio</a></nav>
+ </div>
+</header>
+<main class="contenedor">
+<h1 class="pagina-titulo">Contáctanos</h1>
+<p class="meta" style="margin-bottom:2rem">¿Tienes una noticia, una corrección o una sugerencia? Escríbenos y te responderemos en menos de 48 horas.</p>
+<div class="contacto">
+ <form id="form-contacto" novalidate>
+  <div class="campo"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" autocomplete="name" required><span class="error" id="error-nombre">Escribe tu nombre.</span></div>
+  <div class="campo"><label for="correo">Correo electrónico *</label><input type="email" id="correo" name="correo" autocomplete="email" required><span class="error" id="error-correo">Escribe un correo válido, por ejemplo nombre@dominio.com.</span></div>
+  <div class="campo"><label for="asunto">Asunto *</label>
+   <select id="asunto" name="asunto" required><option value="">Selecciona un motivo</option><option>Enviar una noticia</option><option>Solicitar una corrección</option><option>Sugerencia</option><option>Otro</option></select>
+   <span class="error" id="error-asunto">Selecciona un motivo de contacto.</span></div>
+  <div class="campo"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" minlength="20" required></textarea><span class="error" id="error-mensaje">El mensaje debe tener al menos 20 caracteres.</span></div>
+  <button class="btn btn--acento" type="submit">Enviar mensaje</button>
+  <div class="exito" id="mensaje-exito" role="status"><strong>Mensaje enviado correctamente</strong>Te responderemos pronto al correo indicado.</div>
+ </form>
+ <aside class="info-contacto">
+  <h2>Información de contacto</h2>
+  <dl><dt>Dirección</dt><dd>Calle 57 # 3 - 00, Bogotá</dd><dt>Teléfono</dt><dd>(601) 000 0000</dd><dt>Redes sociales</dt><dd>@polinoticias</dd></dl>
+ </aside>
+</div>
+</main>
+<footer class="footer">
+ <div class="contenedor">
+  <div class="footer__fila">
+   <div><strong>Poli Noticias</strong><br>© 2026 Politécnico Grancolombiano · Proyecto académico Front-end</div>
+   <div>
+    <nav aria-label="Pie de página"><a href="index.html">Inicio</a><a href="noticias.html">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html">Contacto</a></nav>
+    <div class="puntos" aria-label="Redes sociales"><i style="background:var(--verde)"></i><i style="background:var(--rojo)"></i><i style="background:var(--tinta)"></i></div>
+   </div>
+  </div>
+ </div>
+</footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

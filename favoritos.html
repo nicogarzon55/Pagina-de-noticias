@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Favoritos · Poli Noticias</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="header">
+ <div class="contenedor">
+  <div class="header__top">
+   <a class="logo" href="index.html">Poli Noticias</a>
+   <form class="buscador" role="search" id="form-buscador">
+    <label class="sr-only" for="q">Buscar noticias</label>
+    <input type="search" id="q" placeholder="Buscar noticias">
+    <button class="btn btn--verde" type="submit">Buscar</button>
+   </form>
+   <div class="edicion" id="fecha-edicion">Edición nacional</div>
+  </div>
+  <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="noticias.html">Noticias</a><a href="favoritos.html" aria-current="page">Favoritos</a><a href="contacto.html">Contacto</a><span class="nav__sep"></span><a class="nav__cat" href="noticias.html?categoria=educación">Educación</a><a class="nav__cat" href="noticias.html?categoria=tecnológica">Tecnológica</a><a class="nav__cat" href="noticias.html?categoria=turismo">Turismo</a><a class="nav__cat" href="noticias.html?categoria=comercio">Comercio</a></nav>
+ </div>
+</header>
+<main class="contenedor">
+<h1 class="pagina-titulo">Mis favoritos</h1>
+<p class="meta">Noticias que has guardado para leer más tarde. Esta lista se conserva en tu navegador.</p>
+<div class="seccion"><h2 class="seccion__titulo" id="contador-favoritos">3 noticias guardadas</h2>
+<div class="grid grid--2" id="favoritos-grid"><!-- JS: leer ids desde localStorage y renderizar -->
+   <article class="card" data-id="1" data-categoria="educación">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="true" class="fav activo" aria-label="Agregar a favoritos">♥</button>
+    <p class="categoria " style="margin-top:.8rem">Educación</p>
+    <h3>Colegios rurales reciben 3.000 tablets nuevas</h3>
+    <p>Un programa nacional entrega dispositivos a sedes rurales.</p>
+    <a class="card__enlace" href="detalle.html?id=1">Ver más →</a>
+   </article>
+   <article class="card" data-id="4" data-categoria="comercio">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="true" class="fav activo" aria-label="Agregar a favoritos">♥</button>
+    <p class="categoria categoria--comercio" style="margin-top:.8rem">Comercio</p>
+    <h3>Pymes reportan aumento del 8% en exportaciones</h3>
+    <p>El crecimiento se concentra en alimentos y textiles.</p>
+    <a class="card__enlace" href="detalle.html?id=4">Ver más →</a>
+   </article>
+   <article class="card" data-id="3" data-categoria="turismo">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="true" class="fav activo" aria-label="Agregar a favoritos">♥</button>
+    <p class="categoria " style="margin-top:.8rem">Turismo</p>
+    <h3>Cinco rutas ecológicas para el puente festivo</h3>
+    <p>Senderos y reservas para visitar en familia.</p>
+    <a class="card__enlace" href="detalle.html?id=3">Ver más →</a>
+   </article>
+</div>
+<p class="vacio" id="favoritos-vacio" hidden>Aún no tienes favoritos. Toca el corazón de una noticia para guardarla. <a class="card__enlace" href="noticias.html">Ir a noticias</a></p>
+</div>
+</main>
+<footer class="footer">
+ <div class="contenedor">
+  <div class="footer__fila">
+   <div><strong>Poli Noticias</strong><br>© 2026 Politécnico Grancolombiano · Proyecto académico Front-end</div>
+   <div>
+    <nav aria-label="Pie de página"><a href="index.html">Inicio</a><a href="noticias.html">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html">Contacto</a></nav>
+    <div class="puntos" aria-label="Redes sociales"><i style="background:var(--verde)"></i><i style="background:var(--rojo)"></i><i style="background:var(--tinta)"></i></div>
+   </div>
+  </div>
+ </div>
+</footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

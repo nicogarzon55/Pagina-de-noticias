@@ -1,83 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Poli Noticias — Portada</title>
-  <meta name="description" content="Maqueta visual de Poli Noticias. Dirección de color 1b «Archivo».">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inicio · Poli Noticias</title>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-  <!-- Portada — dirección de color 1b "Archivo" -->
-  <main class="sheet">
-
-    <header class="masthead">
-      <div class="masthead__row">
-        <h1 class="masthead__title">Poli Noticias</h1>
-        <div class="masthead__meta">
-          Martes 15 de septiembre<br>
-          Edición nacional · Nº 4.812
-        </div>
-      </div>
-    </header>
-
-    <nav class="sections">
-      <span class="sections__item sections__item--active">Educación</span>
-      <span class="sections__item">Tecnológica</span>
-      <span class="sections__item">Turismo</span>
-      <span class="sections__item">Comercio</span>
-    </nav>
-
-    <section class="lead">
-      <div class="lead__text">
-        <div class="kicker">Educación</div>
-        <h2 class="lead__title">
-          <a href="articulo.html">La reforma de la jornada escolar llega a 1.400 planteles</a>
-        </h2>
-        <p class="lead__standfirst">
-          El calendario arranca en enero y obliga a contratar 9.000 docentes.
-          Los rectores piden claridad sobre el transporte y la alimentación.
-        </p>
-        <div class="byline">Por Marcela Ibáñez · 8 min de lectura</div>
-      </div>
-
-      <figure class="lead__media">
-        <div class="photo photo--lead">
-          <span class="photo__tag">foto de apertura</span>
-        </div>
-        <figcaption class="caption">Aula del colegio Santa Rosa, Bogotá.</figcaption>
-      </figure>
-    </section>
-
-    <section class="stories">
-      <article class="story">
-        <div class="story__kicker kicker kicker--alt">Tecnológica</div>
-        <h3 class="story__title">El país estrena su primer centro de datos público</h3>
-        <p class="story__summary">Operará desde Medellín con capacidad para 40 entidades.</p>
-      </article>
-
-      <article class="story">
-        <div class="story__kicker kicker">Turismo</div>
-        <h3 class="story__title">Temporada alta: 2,1 millones de viajeros en el trimestre</h3>
-        <p class="story__summary">La ocupación hotelera sube 11 puntos frente a 2025.</p>
-      </article>
-
-      <article class="story">
-        <div class="story__kicker kicker">Comercio</div>
-        <h3 class="story__title">Las ventas minoristas crecen por sexto mes seguido</h3>
-        <p class="story__summary">El crédito de consumo explica la mitad del avance.</p>
-      </article>
-    </section>
-
-    <footer class="colophon">
-      <span>Poli Noticias</span>
-      <span>Maqueta · Dirección 1b Archivo</span>
-    </footer>
-
-  </main>
-
+<header class="header">
+ <div class="contenedor">
+  <div class="header__top">
+   <a class="logo" href="index.html">Poli Noticias</a>
+   <form class="buscador" role="search" id="form-buscador">
+    <label class="sr-only" for="q">Buscar noticias</label>
+    <input type="search" id="q" placeholder="Buscar noticias">
+    <button class="btn btn--verde" type="submit">Buscar</button>
+   </form>
+   <div class="edicion" id="fecha-edicion">Edición nacional</div>
+  </div>
+  <nav class="nav" aria-label="Principal"><a href="index.html" aria-current="page">Inicio</a><a href="noticias.html">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html">Contacto</a><span class="nav__sep"></span><a class="nav__cat" href="noticias.html?categoria=educación">Educación</a><a class="nav__cat" href="noticias.html?categoria=tecnológica">Tecnológica</a><a class="nav__cat" href="noticias.html?categoria=turismo">Turismo</a><a class="nav__cat" href="noticias.html?categoria=comercio">Comercio</a></nav>
+ </div>
+</header>
+<main class="contenedor">
+<section class="hero" aria-labelledby="hero-titulo">
+ <div>
+  <p class="categoria">Educación</p>
+  <h1 id="hero-titulo">La reforma de la jornada escolar llega a 1.400 planteles</h1>
+  <p>El calendario arranca en enero y obliga a contratar 9.000 docentes. Los rectores piden claridad sobre el transporte y la alimentación.</p>
+  <p class="meta">Por Marcela Ibáñez · 8 min de lectura</p>
+  <a class="btn btn--acento" href="noticias.html">Explorar noticias</a>
+ </div>
+ <figure style="margin:0"><div class="ph" data-etiqueta="Foto de apertura"></div><figcaption class="pie-foto">Aula del colegio Santa Rosa, Bogotá.</figcaption></figure>
+</section>
+<section class="seccion" aria-labelledby="dest">
+ <h2 class="seccion__titulo" id="dest">Noticias destacadas</h2>
+ <div class="grid" id="destacadas-grid"><!-- JS: renderizar desde data/noticias.json -->
+   <article class="card" data-id="6" data-categoria="tecnológica">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
+    <p class="categoria " style="margin-top:.8rem">Tecnológica</p>
+    <h3>Ciudad piloto probará buses eléctricos en 2027</h3>
+    <p>La primera flota tendrá 60 unidades.</p>
+    <a class="card__enlace" href="detalle.html?id=6">Ver más →</a>
+   </article>
+   <article class="card" data-id="3" data-categoria="turismo">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
+    <p class="categoria " style="margin-top:.8rem">Turismo</p>
+    <h3>Cinco rutas ecológicas para el puente festivo</h3>
+    <p>Senderos y reservas para visitar en familia.</p>
+    <a class="card__enlace" href="detalle.html?id=3">Ver más →</a>
+   </article>
+   <article class="card" data-id="4" data-categoria="comercio">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
+    <p class="categoria categoria--comercio" style="margin-top:.8rem">Comercio</p>
+    <h3>Pymes reportan aumento del 8% en exportaciones</h3>
+    <p>El crecimiento se concentra en alimentos y textiles.</p>
+    <a class="card__enlace" href="detalle.html?id=4">Ver más →</a>
+   </article>
+  </div>
+</section>
+<aside class="cta"><p>¿Tienes una noticia para contarnos?</p><a class="btn btn--acento" href="contacto.html">Contáctanos</a></aside>
+</main>
+<footer class="footer">
+ <div class="contenedor">
+  <div class="footer__fila">
+   <div><strong>Poli Noticias</strong><br>© 2026 Politécnico Grancolombiano · Proyecto académico Front-end</div>
+   <div>
+    <nav aria-label="Pie de página"><a href="index.html">Inicio</a><a href="noticias.html">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html">Contacto</a></nav>
+    <div class="puntos" aria-label="Redes sociales"><i style="background:var(--verde)"></i><i style="background:var(--rojo)"></i><i style="background:var(--tinta)"></i></div>
+   </div>
+  </div>
+ </div>
+</footer>
+<script src="js/main.js" defer></script>
 </body>
 </html>

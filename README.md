@@ -1,49 +1,17 @@
-# Poli Noticias
+# Poli Noticias · Entrega 2 (HTML + CSS)
 
-Maqueta visual (mockup) de un periódico digital, construida a partir de la
-dirección de color **1b — "Archivo"** del sistema de diseño *Broadsheet*.
+Estructura:
+- index.html, noticias.html, detalle.html, favoritos.html, contacto.html
+- css/styles.css (único archivo de estilos, variables en :root)
+- js/main.js  -> lo desarrolla el resto del equipo
+- data/noticias.json -> lo desarrolla el resto del equipo
 
-> **Estado: solo visual.** No hay JavaScript, ni backend, ni navegación real.
-> Los enlaces de secciones son marcadores y las imágenes son placeholders
-> rayados. La idea es ver la dirección de color y la retícula antes de
-> construir la funcionalidad.
-
-## Dirección 1b — Archivo
-
-Papel prensa cálido, verde y bermellón. Tono de diario de registro.
-
-| Rol | Token | Color |
-|---|---|---|
-| Fondo (papel) | `--color-bg` | `#f4efe3` |
-| Texto (tinta) | `--color-text` | `#231f1a` |
-| Acento | `--color-accent` | `#146b5b` |
-| Acento 2 | `--color-accent-2` | `#b03a22` |
-
-Tipografía: **Source Serif 4** (títulos en peso 600, cuerpo en 400, citas en
-cursiva), cargada desde Google Fonts.
-
-## Archivos
-
-```
-Pagina-de-noticias/
-├── index.html      Portada
-├── articulo.html   Página de artículo
-├── css/
-│   └── styles.css  Tokens del sistema + estilos de las dos páginas
-└── README.md
-```
-
-## Cómo verlo
-
-Abre `index.html` en el navegador. No hace falta instalar nada ni levantar un
-servidor.
-
-Si usas VS Code, la extensión **Live Server** da recarga automática al editar:
-clic derecho sobre `index.html` → *Open with Live Server*.
-
-## Siguientes pasos
-
-- Reemplazar los placeholders rayados por fotografías reales.
-- Convertir la barra de secciones en navegación real.
-- Extraer las tarjetas de noticia a plantillas cuando llegue el contenido
-  dinámico.
+Ganchos para JS:
+- #destacadas-grid, #noticias-grid, #favoritos-grid: contenedores de tarjetas
+- .card[data-id][data-categoria] + .fav (aria-pressed) + enlace detalle.html?id=N
+- #filtros .chip[data-categoria], #paginacion, #sin-resultados
+- detalle: #d-categoria, #d-titulo, #d-meta, #d-cuerpo, #btn-favorito, #relacionadas
+- favoritos: #contador-favoritos, #favoritos-vacio
+- contacto: #form-contacto, campos nombre/correo/asunto/mensaje;
+  para errores agregar la clase .invalido al .campo; para éxito la clase .visible a #mensaje-exito
+- #fecha-edicion: fecha del encabezado

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detalle de la noticia · Poli Noticias</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="header">
+ <div class="contenedor">
+  <div class="header__top">
+   <a class="logo" href="index.html">Poli Noticias</a>
+   <form class="buscador" role="search" id="form-buscador">
+    <label class="sr-only" for="q">Buscar noticias</label>
+    <input type="search" id="q" placeholder="Buscar noticias">
+    <button class="btn btn--verde" type="submit">Buscar</button>
+   </form>
+   <div class="edicion" id="fecha-edicion">Edición nacional</div>
+  </div>
+  <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="noticias.html" aria-current="page">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html">Contacto</a><span class="nav__sep"></span><a class="nav__cat" href="noticias.html?categoria=educación">Educación</a><a class="nav__cat" href="noticias.html?categoria=tecnológica">Tecnológica</a><a class="nav__cat" href="noticias.html?categoria=turismo">Turismo</a><a class="nav__cat" href="noticias.html?categoria=comercio">Comercio</a></nav>
+ </div>
+</header>
+<main class="contenedor">
+<article class="detalle" id="detalle" data-id="1">
+ <div>
+  <p class="categoria" id="d-categoria">Tecnológica</p>
+  <h1 id="d-titulo">El país estrena su primer centro de datos público</h1>
+  <p class="meta" id="d-meta">Por Camilo Rueda · 15 de septiembre de 2026 · 6 min de lectura</p>
+  <figure style="margin:1rem 0"><div class="ph" data-etiqueta="Imagen principal"></div><figcaption class="pie-foto">Centro de datos, Medellín.</figcaption></figure>
+  <div class="detalle__cuerpo" id="d-cuerpo">
+   <p>El nuevo centro operará desde Medellín y tendrá capacidad para alojar la información de 40 entidades públicas, reduciendo costos de infraestructura y mejorando la seguridad de los datos ciudadanos.</p>
+   <p>El proyecto contempla una segunda fase en 2027 con nodos regionales en Cali y Barranquilla, así como capacitación técnica para el personal encargado del mantenimiento.</p>
+  </div>
+  <div class="detalle__acciones">
+   <button class="btn btn--verde" type="button" id="btn-favorito" aria-pressed="false">♡ Agregar a favoritos</button>
+   <a class="btn btn--borde" href="contacto.html">Contactar</a>
+  </div>
+ </div>
+ <aside class="relacionadas" id="relacionadas" aria-label="Noticias relacionadas">
+  <h2>Relacionadas</h2>
+  <a href="detalle.html?id=6"><div class="ph" data-etiqueta="Imagen"></div><h3>Ciudad piloto probará buses eléctricos en 2027</h3></a>
+  <a href="detalle.html?id=5"><div class="ph" data-etiqueta="Imagen"></div><h3>Nueva biblioteca digital gratuita para estudiantes</h3></a>
+ </aside>
+</article>
+</main>
+<footer class="footer">
+ <div class="contenedor">
+  <div class="footer__fila">
+   <div><strong>Poli Noticias</strong><br>© 2026 Politécnico Grancolombiano · Proyecto académico Front-end</div>
+   <div>
+    <nav aria-label="Pie de página"><a href="index.html">Inicio</a><a href="noticias.html">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html">Contacto</a></nav>
+    <div class="puntos" aria-label="Redes sociales"><i style="background:var(--verde)"></i><i style="background:var(--rojo)"></i><i style="background:var(--tinta)"></i></div>
+   </div>
+  </div>
+ </div>
+</footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

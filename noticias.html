@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticias · Poli Noticias</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="header">
+ <div class="contenedor">
+  <div class="header__top">
+   <a class="logo" href="index.html">Poli Noticias</a>
+   <form class="buscador" role="search" id="form-buscador">
+    <label class="sr-only" for="q">Buscar noticias</label>
+    <input type="search" id="q" placeholder="Buscar noticias">
+    <button class="btn btn--verde" type="submit">Buscar</button>
+   </form>
+   <div class="edicion" id="fecha-edicion">Edición nacional</div>
+  </div>
+  <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="noticias.html" aria-current="page">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html">Contacto</a><span class="nav__sep"></span><a class="nav__cat" href="noticias.html?categoria=educación">Educación</a><a class="nav__cat" href="noticias.html?categoria=tecnológica">Tecnológica</a><a class="nav__cat" href="noticias.html?categoria=turismo">Turismo</a><a class="nav__cat" href="noticias.html?categoria=comercio">Comercio</a></nav>
+ </div>
+</header>
+<main class="contenedor">
+<h1 class="pagina-titulo">Todas las noticias</h1>
+<div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoría">
+ <button class="chip activo" type="button" data-categoria="todas" aria-pressed="true">Todas</button>
+ <button class="chip" type="button" data-categoria="educación" aria-pressed="false">Educación</button>
+ <button class="chip" type="button" data-categoria="tecnológica" aria-pressed="false">Tecnológica</button>
+ <button class="chip" type="button" data-categoria="turismo" aria-pressed="false">Turismo</button>
+ <button class="chip" type="button" data-categoria="comercio" aria-pressed="false">Comercio</button>
+</div>
+<div class="grid grid--2" id="noticias-grid"><!-- JS: renderizar desde data/noticias.json -->
+   <article class="card" data-id="1" data-categoria="educación">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
+    <p class="categoria " style="margin-top:.8rem">Educación</p>
+    <h3>Colegios rurales reciben 3.000 tablets nuevas</h3>
+    <p>Un programa nacional entrega dispositivos a sedes rurales.</p>
+    <a class="card__enlace" href="detalle.html?id=1">Ver más →</a>
+   </article>
+   <article class="card" data-id="2" data-categoria="tecnológica">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
+    <p class="categoria " style="margin-top:.8rem">Tecnológica</p>
+    <h3>Lanzan app oficial para trámites universitarios</h3>
+    <p>Matrículas y certificados desde el celular.</p>
+    <a class="card__enlace" href="detalle.html?id=2">Ver más →</a>
+   </article>
+   <article class="card" data-id="3" data-categoria="turismo">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
+    <p class="categoria " style="margin-top:.8rem">Turismo</p>
+    <h3>Cinco rutas ecológicas para el puente festivo</h3>
+    <p>Senderos y reservas para visitar en familia.</p>
+    <a class="card__enlace" href="detalle.html?id=3">Ver más →</a>
+   </article>
+   <article class="card" data-id="4" data-categoria="comercio">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
+    <p class="categoria categoria--comercio" style="margin-top:.8rem">Comercio</p>
+    <h3>Pymes reportan aumento del 8% en exportaciones</h3>
+    <p>El crecimiento se concentra en alimentos y textiles.</p>
+    <a class="card__enlace" href="detalle.html?id=4">Ver más →</a>
+   </article>
+   <article class="card" data-id="5" data-categoria="educación">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
+    <p class="categoria " style="margin-top:.8rem">Educación</p>
+    <h3>Nueva biblioteca digital gratuita para estudiantes</h3>
+    <p>Más de 20.000 títulos disponibles sin costo.</p>
+    <a class="card__enlace" href="detalle.html?id=5">Ver más →</a>
+   </article>
+   <article class="card" data-id="6" data-categoria="tecnológica">
+    <div class="ph" data-etiqueta="Imagen"></div>
+    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
+    <p class="categoria " style="margin-top:.8rem">Tecnológica</p>
+    <h3>Ciudad piloto probará buses eléctricos en 2027</h3>
+    <p>La primera flota tendrá 60 unidades.</p>
+    <a class="card__enlace" href="detalle.html?id=6">Ver más →</a>
+   </article>
+</div>
+<p class="vacio" id="sin-resultados" hidden>No hay noticias en esta categoría. Prueba con otro filtro.</p>
+<nav class="paginacion" id="paginacion" aria-label="Paginación"><button class="activo" type="button">1</button><button type="button">2</button><button type="button">3</button></nav>
+</main>
+<footer class="footer">
+ <div class="contenedor">
+  <div class="footer__fila">
+   <div><strong>Poli Noticias</strong><br>© 2026 Politécnico Grancolombiano · Proyecto académico Front-end</div>
+   <div>
+    <nav aria-label="Pie de página"><a href="index.html">Inicio</a><a href="noticias.html">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html">Contacto</a></nav>
+    <div class="puntos" aria-label="Redes sociales"><i style="background:var(--verde)"></i><i style="background:var(--rojo)"></i><i style="background:var(--tinta)"></i></div>
+   </div>
+  </div>
+ </div>
+</footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

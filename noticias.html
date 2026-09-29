@@ -6,7 +6,7 @@
 <title>Noticias · Poli Noticias</title>
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-pagina="noticias">
 <header class="header">
  <div class="contenedor">
   <div class="header__top">
@@ -22,7 +22,29 @@
  </div>
 </header>
 <main class="contenedor">
-<h1 class="pagina-titulo">Todas las noticias</h1>
+<h1 class="pagina-titulo" id="titulo-listado">Todas las noticias</h1>
+<details class="panel" id="panel-crear">
+ <summary>+ Publicar una noticia</summary>
+ <form id="form-noticia" novalidate>
+  <div class="panel__fila">
+   <div class="campo"><label for="n-titulo">Título *</label><input type="text" id="n-titulo" name="titulo" maxlength="120" aria-describedby="error-n-titulo" required><span class="error" id="error-n-titulo">Escribe un título de 10 a 120 caracteres.</span></div>
+   <div class="campo"><label for="n-categoria">Categoría *</label>
+    <select id="n-categoria" name="categoria" aria-describedby="error-n-categoria" required><option value="">Selecciona una categoría</option><option value="educación">Educación</option><option value="tecnológica">Tecnológica</option><option value="turismo">Turismo</option><option value="comercio">Comercio</option></select>
+    <span class="error" id="error-n-categoria">Selecciona una categoría.</span></div>
+  </div>
+  <div class="campo"><label for="n-resumen">Descripción breve *</label><input type="text" id="n-resumen" name="resumen" maxlength="160" aria-describedby="error-n-resumen" required><span class="error" id="error-n-resumen">Escribe una descripción de 10 a 160 caracteres.</span></div>
+  <div class="campo"><label for="n-cuerpo">Contenido completo *</label><textarea id="n-cuerpo" name="cuerpo" aria-describedby="error-n-cuerpo" required></textarea><span class="error" id="error-n-cuerpo">El contenido debe tener al menos 40 caracteres. Separa los párrafos con Enter.</span></div>
+  <div class="panel__fila">
+   <div class="campo"><label for="n-autor">Autor *</label><input type="text" id="n-autor" name="autor" autocomplete="name" aria-describedby="error-n-autor" required><span class="error" id="error-n-autor">Escribe el nombre del autor.</span></div>
+   <div class="campo"><label for="n-imagen">URL de la imagen (opcional)</label><input type="url" id="n-imagen" name="imagen" placeholder="https://…" aria-describedby="error-n-imagen"><span class="error" id="error-n-imagen">Escribe una URL válida que empiece por http:// o https://.</span></div>
+  </div>
+  <div class="panel__acciones">
+   <button class="btn btn--acento" type="submit">Publicar noticia</button>
+   <button class="btn btn--borde" type="button" id="btn-restaurar">Restaurar noticias originales</button>
+  </div>
+  <div class="exito" id="noticia-exito" role="status"><strong>Noticia publicada</strong>Ya aparece en el listado. <a class="card__enlace" href="#">Ver la noticia →</a></div>
+ </form>
+</details>
 <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoría">
  <button class="chip activo" type="button" data-categoria="todas" aria-pressed="true">Todas</button>
  <button class="chip" type="button" data-categoria="educación" aria-pressed="false">Educación</button>
@@ -30,58 +52,9 @@
  <button class="chip" type="button" data-categoria="turismo" aria-pressed="false">Turismo</button>
  <button class="chip" type="button" data-categoria="comercio" aria-pressed="false">Comercio</button>
 </div>
-<div class="grid grid--2" id="noticias-grid"><!-- JS: renderizar desde data/noticias.json -->
-   <article class="card" data-id="1" data-categoria="educación">
-    <div class="ph" data-etiqueta="Imagen"></div>
-    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
-    <p class="categoria " style="margin-top:.8rem">Educación</p>
-    <h3>Colegios rurales reciben 3.000 tablets nuevas</h3>
-    <p>Un programa nacional entrega dispositivos a sedes rurales.</p>
-    <a class="card__enlace" href="detalle.html?id=1">Ver más →</a>
-   </article>
-   <article class="card" data-id="2" data-categoria="tecnológica">
-    <div class="ph" data-etiqueta="Imagen"></div>
-    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
-    <p class="categoria " style="margin-top:.8rem">Tecnológica</p>
-    <h3>Lanzan app oficial para trámites universitarios</h3>
-    <p>Matrículas y certificados desde el celular.</p>
-    <a class="card__enlace" href="detalle.html?id=2">Ver más →</a>
-   </article>
-   <article class="card" data-id="3" data-categoria="turismo">
-    <div class="ph" data-etiqueta="Imagen"></div>
-    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
-    <p class="categoria " style="margin-top:.8rem">Turismo</p>
-    <h3>Cinco rutas ecológicas para el puente festivo</h3>
-    <p>Senderos y reservas para visitar en familia.</p>
-    <a class="card__enlace" href="detalle.html?id=3">Ver más →</a>
-   </article>
-   <article class="card" data-id="4" data-categoria="comercio">
-    <div class="ph" data-etiqueta="Imagen"></div>
-    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
-    <p class="categoria categoria--comercio" style="margin-top:.8rem">Comercio</p>
-    <h3>Pymes reportan aumento del 8% en exportaciones</h3>
-    <p>El crecimiento se concentra en alimentos y textiles.</p>
-    <a class="card__enlace" href="detalle.html?id=4">Ver más →</a>
-   </article>
-   <article class="card" data-id="5" data-categoria="educación">
-    <div class="ph" data-etiqueta="Imagen"></div>
-    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
-    <p class="categoria " style="margin-top:.8rem">Educación</p>
-    <h3>Nueva biblioteca digital gratuita para estudiantes</h3>
-    <p>Más de 20.000 títulos disponibles sin costo.</p>
-    <a class="card__enlace" href="detalle.html?id=5">Ver más →</a>
-   </article>
-   <article class="card" data-id="6" data-categoria="tecnológica">
-    <div class="ph" data-etiqueta="Imagen"></div>
-    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
-    <p class="categoria " style="margin-top:.8rem">Tecnológica</p>
-    <h3>Ciudad piloto probará buses eléctricos en 2027</h3>
-    <p>La primera flota tendrá 60 unidades.</p>
-    <a class="card__enlace" href="detalle.html?id=6">Ver más →</a>
-   </article>
-</div>
-<p class="vacio" id="sin-resultados" hidden>No hay noticias en esta categoría. Prueba con otro filtro.</p>
-<nav class="paginacion" id="paginacion" aria-label="Paginación"><button class="activo" type="button">1</button><button type="button">2</button><button type="button">3</button></nav>
+<div class="grid grid--2" id="noticias-grid"><p class="vacio">Cargando noticias…</p></div>
+<p class="vacio" id="sin-resultados" hidden>No hay noticias que coincidan con tu búsqueda o filtro. Prueba con otro.</p>
+<nav class="paginacion" id="paginacion" aria-label="Paginación"></nav>
 </main>
 <footer class="footer">
  <div class="contenedor">
@@ -94,6 +67,6 @@
   </div>
  </div>
 </footer>
-<script src="js/main.js" defer></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "titulo": "Colegios rurales reciben 3.000 tablets nuevas",
+    "categoria": "educación",
+    "resumen": "Un programa nacional entrega dispositivos a sedes rurales.",
+    "cuerpo": [
+      "El Ministerio de Educación inició la entrega de 3.000 tablets a 120 sedes rurales de Boyacá, Cauca y Nariño. Cada equipo llega con contenidos precargados para funcionar sin conexión a internet.",
+      "Los docentes recibirán un curso virtual de 40 horas para integrar los dispositivos en clase. La meta es cubrir 500 sedes antes de terminar 2027."
+    ],
+    "autor": "Marcela Ibáñez",
+    "fecha": "2026-09-22",
+    "lectura": 5,
+    "imagen": "https://picsum.photos/seed/poli-tablets/800/500",
+    "pieFoto": "Estudiantes de una sede rural en Boyacá.",
+    "destacada": false
+  },
+  {
+    "id": 2,
+    "titulo": "Lanzan app oficial para trámites universitarios",
+    "categoria": "tecnológica",
+    "resumen": "Matrículas y certificados desde el celular.",
+    "cuerpo": [
+      "La nueva aplicación permite pagar la matrícula, descargar certificados y consultar notas sin hacer filas. Está disponible para Android y iOS.",
+      "Según la universidad, el 70 % de los trámites presenciales podrán hacerse desde la app durante el primer semestre de funcionamiento."
+    ],
+    "autor": "Camilo Rueda",
+    "fecha": "2026-09-20",
+    "lectura": 4,
+    "imagen": "https://picsum.photos/seed/poli-app/800/500",
+    "pieFoto": "Pantalla de inicio de la aplicación.",
+    "destacada": false
+  },
+  {
+    "id": 3,
+    "titulo": "Cinco rutas ecológicas para el puente festivo",
+    "categoria": "turismo",
+    "resumen": "Senderos y reservas para visitar en familia.",
+    "cuerpo": [
+      "Desde el páramo de Chingaza hasta el Parque Tayrona, reunimos cinco rutas de dificultad baja y media ideales para un fin de semana largo.",
+      "Recuerda reservar con anticipación: varias reservas limitan el número de visitantes por día y exigen guía local certificado."
+    ],
+    "autor": "Laura Méndez",
+    "fecha": "2026-09-18",
+    "lectura": 7,
+    "imagen": "https://picsum.photos/seed/poli-rutas/800/500",
+    "pieFoto": "Sendero en el páramo de Chingaza.",
+    "destacada": true
+  },
+  {
+    "id": 4,
+    "titulo": "Pymes reportan aumento del 8% en exportaciones",
+    "categoria": "comercio",
+    "resumen": "El crecimiento se concentra en alimentos y textiles.",
+    "cuerpo": [
+      "Las pequeñas y medianas empresas exportaron 8 % más que el año anterior, impulsadas por la demanda de café especial, frutas procesadas y confecciones.",
+      "Los gremios piden ampliar las líneas de crédito para que más empresas puedan certificarse y llegar a nuevos mercados."
+    ],
+    "autor": "Andrés Pinzón",
+    "fecha": "2026-09-17",
+    "lectura": 6,
+    "imagen": "https://picsum.photos/seed/poli-pymes/800/500",
+    "pieFoto": "Bodega de una empresa exportadora en Cali.",
+    "destacada": true
+  },
+  {
+    "id": 5,
+    "titulo": "Nueva biblioteca digital gratuita para estudiantes",
+    "categoria": "educación",
+    "resumen": "Más de 20.000 títulos disponibles sin costo.",
+    "cuerpo": [
+      "La biblioteca reúne libros de texto, revistas científicas y audiolibros a los que se accede con el correo institucional.",
+      "La plataforma también ofrece préstamos de libros electrónicos por 15 días y una sección especial para docentes."
+    ],
+    "autor": "Marcela Ibáñez",
+    "fecha": "2026-09-16",
+    "lectura": 3,
+    "imagen": "https://picsum.photos/seed/poli-biblioteca/800/500",
+    "pieFoto": "Sala de lectura de la biblioteca central.",
+    "destacada": false
+  },
+  {
+    "id": 6,
+    "titulo": "Ciudad piloto probará buses eléctricos en 2027",
+    "categoria": "tecnológica",
+    "resumen": "La primera flota tendrá 60 unidades.",
+    "cuerpo": [
+      "Los 60 buses eléctricos cubrirán tres rutas troncales y reducirán en 4.000 toneladas las emisiones de CO₂ al año.",
+      "La ciudad construirá dos patios de carga y evaluará los resultados durante 12 meses antes de ampliar la flota."
+    ],
+    "autor": "Camilo Rueda",
+    "fecha": "2026-09-15",
+    "lectura": 5,
+    "imagen": "https://picsum.photos/seed/poli-buses/800/500",
+    "pieFoto": "Prototipo del bus eléctrico.",
+    "destacada": true
+  },
+  {
+    "id": 7,
+    "titulo": "El país estrena su primer centro de datos público",
+    "categoria": "tecnológica",
+    "resumen": "Alojará la información de 40 entidades públicas.",
+    "cuerpo": [
+      "El nuevo centro operará desde Medellín y tendrá capacidad para alojar la información de 40 entidades públicas, reduciendo costos de infraestructura y mejorando la seguridad de los datos ciudadanos.",
+      "El proyecto contempla una segunda fase en 2027 con nodos regionales en Cali y Barranquilla, así como capacitación técnica para el personal encargado del mantenimiento."
+    ],
+    "autor": "Camilo Rueda",
+    "fecha": "2026-09-14",
+    "lectura": 6,
+    "imagen": "https://picsum.photos/seed/poli-datos/800/500",
+    "pieFoto": "Centro de datos, Medellín.",
+    "destacada": false
+  },
+  {
+    "id": 8,
+    "titulo": "Cartagena abre su temporada de avistamiento de aves",
+    "categoria": "turismo",
+    "resumen": "Más de 200 especies pueden verse en la temporada.",
+    "cuerpo": [
+      "Guías locales ofrecen recorridos al amanecer por la Ciénaga de la Virgen y el Canal del Dique, donde se han registrado más de 200 especies.",
+      "Los operadores recomiendan llevar binoculares, ropa clara y reservar con al menos una semana de anticipación."
+    ],
+    "autor": "Laura Méndez",
+    "fecha": "2026-09-12",
+    "lectura": 4,
+    "imagen": "https://picsum.photos/seed/poli-aves/800/500",
+    "pieFoto": "Garza en la Ciénaga de la Virgen.",
+    "destacada": false
+  },
+  {
+    "id": 9,
+    "titulo": "Feria de emprendimiento reúne a 300 marcas locales",
+    "categoria": "comercio",
+    "resumen": "Tres días de ventas, charlas y ruedas de negocio.",
+    "cuerpo": [
+      "La feria se realizará en Corferias con 300 marcas locales de moda, alimentos y tecnología. La entrada es gratuita con registro previo.",
+      "Habrá ruedas de negocio con compradores de cinco países y talleres sobre comercio electrónico para pequeños negocios."
+    ],
+    "autor": "Andrés Pinzón",
+    "fecha": "2026-09-10",
+    "lectura": 3,
+    "imagen": "https://picsum.photos/seed/poli-feria/800/500",
+    "pieFoto": "Pabellón principal de la feria.",
+    "destacada": false
+  },
+  {
+    "id": 10,
+    "titulo": "Universidades amplían becas para carreras STEM",
+    "categoria": "educación",
+    "resumen": "Se ofrecerán 1.500 cupos con matrícula completa.",
+    "cuerpo": [
+      "Doce universidades se unieron para ofrecer 1.500 becas de matrícula completa en ingeniería, matemáticas y ciencias de la computación.",
+      "Las inscripciones abren en octubre y darán prioridad a estudiantes de colegios públicos y a mujeres que ingresen a carreras técnicas."
+    ],
+    "autor": "Marcela Ibáñez",
+    "fecha": "2026-09-08",
+    "lectura": 5,
+    "imagen": "https://picsum.photos/seed/poli-becas/800/500",
+    "pieFoto": "Laboratorio de ingeniería.",
+    "destacada": false
+  }
+]

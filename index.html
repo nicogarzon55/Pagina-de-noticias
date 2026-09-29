@@ -6,7 +6,7 @@
 <title>Inicio · Poli Noticias</title>
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-pagina="inicio">
 <header class="header">
  <div class="contenedor">
   <div class="header__top">
@@ -22,46 +22,28 @@
  </div>
 </header>
 <main class="contenedor">
-<section class="hero" aria-labelledby="hero-titulo">
+<section class="bienvenida" aria-labelledby="bienvenida-titulo">
+ <h1 id="bienvenida-titulo">Bienvenido a Poli Noticias</h1>
+ <p>Noticias de educación, tecnología, turismo y comercio en un solo lugar. Explora, guarda tus favoritas y comparte las tuyas.</p>
+</section>
+<section class="hero" id="hero" aria-labelledby="hero-titulo">
  <div>
-  <p class="categoria">Educación</p>
-  <h1 id="hero-titulo">La reforma de la jornada escolar llega a 1.400 planteles</h1>
-  <p>El calendario arranca en enero y obliga a contratar 9.000 docentes. Los rectores piden claridad sobre el transporte y la alimentación.</p>
-  <p class="meta">Por Marcela Ibáñez · 8 min de lectura</p>
-  <a class="btn btn--acento" href="noticias.html">Explorar noticias</a>
+  <p class="categoria" id="hero-categoria">Educación</p>
+  <h2 id="hero-titulo">La reforma de la jornada escolar llega a 1.400 planteles</h2>
+  <p id="hero-resumen">El calendario arranca en enero y obliga a contratar 9.000 docentes. Los rectores piden claridad sobre el transporte y la alimentación.</p>
+  <p class="meta" id="hero-meta">Por Marcela Ibáñez · 8 min de lectura</p>
+  <div class="hero__acciones">
+   <a class="btn btn--acento" id="hero-enlace" href="noticias.html">Leer noticia</a>
+   <a class="btn btn--borde" href="noticias.html">Explorar noticias</a>
+  </div>
  </div>
- <figure style="margin:0"><div class="ph" data-etiqueta="Foto de apertura"></div><figcaption class="pie-foto">Aula del colegio Santa Rosa, Bogotá.</figcaption></figure>
+ <figure style="margin:0"><div id="hero-imagen"><div class="ph" data-etiqueta="Foto de apertura"></div></div><figcaption class="pie-foto" id="hero-pie">Aula del colegio Santa Rosa, Bogotá.</figcaption></figure>
 </section>
 <section class="seccion" aria-labelledby="dest">
  <h2 class="seccion__titulo" id="dest">Noticias destacadas</h2>
- <div class="grid" id="destacadas-grid"><!-- JS: renderizar desde data/noticias.json -->
-   <article class="card" data-id="6" data-categoria="tecnológica">
-    <div class="ph" data-etiqueta="Imagen"></div>
-    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
-    <p class="categoria " style="margin-top:.8rem">Tecnológica</p>
-    <h3>Ciudad piloto probará buses eléctricos en 2027</h3>
-    <p>La primera flota tendrá 60 unidades.</p>
-    <a class="card__enlace" href="detalle.html?id=6">Ver más →</a>
-   </article>
-   <article class="card" data-id="3" data-categoria="turismo">
-    <div class="ph" data-etiqueta="Imagen"></div>
-    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
-    <p class="categoria " style="margin-top:.8rem">Turismo</p>
-    <h3>Cinco rutas ecológicas para el puente festivo</h3>
-    <p>Senderos y reservas para visitar en familia.</p>
-    <a class="card__enlace" href="detalle.html?id=3">Ver más →</a>
-   </article>
-   <article class="card" data-id="4" data-categoria="comercio">
-    <div class="ph" data-etiqueta="Imagen"></div>
-    <button type="button" aria-pressed="false" class="fav" aria-label="Agregar a favoritos">♡</button>
-    <p class="categoria categoria--comercio" style="margin-top:.8rem">Comercio</p>
-    <h3>Pymes reportan aumento del 8% en exportaciones</h3>
-    <p>El crecimiento se concentra en alimentos y textiles.</p>
-    <a class="card__enlace" href="detalle.html?id=4">Ver más →</a>
-   </article>
-  </div>
+ <div class="grid" id="destacadas-grid"><p class="vacio">Cargando noticias…</p></div>
 </section>
-<aside class="cta"><p>¿Tienes una noticia para contarnos?</p><a class="btn btn--acento" href="contacto.html">Contáctanos</a></aside>
+<aside class="cta"><p>¿Tienes una noticia para contarnos?</p><div class="cta__acciones"><a class="btn btn--acento" href="noticias.html#panel-crear">Publicar noticia</a><a class="btn btn--borde-claro" href="contacto.html">Contáctanos</a></div></aside>
 </main>
 <footer class="footer">
  <div class="contenedor">
@@ -74,6 +56,6 @@
   </div>
  </div>
 </footer>
-<script src="js/main.js" defer></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

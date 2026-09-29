@@ -6,7 +6,7 @@
 <title>Contacto · Poli Noticias</title>
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-pagina="contacto">
 <header class="header">
  <div class="contenedor">
   <div class="header__top">
@@ -26,14 +26,14 @@
 <p class="meta" style="margin-bottom:2rem">¿Tienes una noticia, una corrección o una sugerencia? Escríbenos y te responderemos en menos de 48 horas.</p>
 <div class="contacto">
  <form id="form-contacto" novalidate>
-  <div class="campo"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" autocomplete="name" required><span class="error" id="error-nombre">Escribe tu nombre.</span></div>
-  <div class="campo"><label for="correo">Correo electrónico *</label><input type="email" id="correo" name="correo" autocomplete="email" required><span class="error" id="error-correo">Escribe un correo válido, por ejemplo nombre@dominio.com.</span></div>
+  <div class="campo"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" aria-describedby="error-nombre" autocomplete="name" required><span class="error" id="error-nombre">Escribe tu nombre.</span></div>
+  <div class="campo"><label for="correo">Correo electrónico *</label><input type="email" id="correo" name="correo" aria-describedby="error-correo" autocomplete="email" required><span class="error" id="error-correo">Escribe un correo válido, por ejemplo nombre@dominio.com.</span></div>
   <div class="campo"><label for="asunto">Asunto *</label>
-   <select id="asunto" name="asunto" required><option value="">Selecciona un motivo</option><option>Enviar una noticia</option><option>Solicitar una corrección</option><option>Sugerencia</option><option>Otro</option></select>
+   <select id="asunto" name="asunto" aria-describedby="error-asunto" required><option value="">Selecciona un motivo</option><option>Enviar una noticia</option><option>Solicitar una corrección</option><option>Sugerencia</option><option>Otro</option></select>
    <span class="error" id="error-asunto">Selecciona un motivo de contacto.</span></div>
-  <div class="campo"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" minlength="20" required></textarea><span class="error" id="error-mensaje">El mensaje debe tener al menos 20 caracteres.</span></div>
+  <div class="campo"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" aria-describedby="error-mensaje" minlength="20" required></textarea><span class="error" id="error-mensaje">El mensaje debe tener al menos 20 caracteres.</span></div>
   <button class="btn btn--acento" type="submit">Enviar mensaje</button>
-  <div class="exito" id="mensaje-exito" role="status"><strong>Mensaje enviado correctamente</strong>Te responderemos pronto al correo indicado.</div>
+  <div class="exito" id="mensaje-exito" role="status"><strong>Mensaje enviado correctamente</strong><span>Te responderemos pronto al correo indicado.</span></div>
  </form>
  <aside class="info-contacto">
   <h2>Información de contacto</h2>
@@ -52,6 +52,6 @@
   </div>
  </div>
 </footer>
-<script src="js/main.js" defer></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

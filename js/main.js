@@ -25,15 +25,26 @@ function mostrarFechaEdicion() {
   elemento.textContent = `${hoy.charAt(0).toUpperCase()}${hoy.slice(1)} · Edición nacional`;
 }
 
-// El buscador del encabezado lleva a noticias.html?q=...
-// En la página de noticias, esa misma página se encarga de filtrar en vivo.
+// El buscador del encabezado filtra mientras se escribe: en la página de
+// noticias lo hace esa misma página; en las demás, tras una breve pausa al
+// escribir (o con Enter), lleva a noticias.html?q=...
 function activarBuscador() {
   const formulario = document.getElementById('form-buscador');
   if (!formulario || document.body.dataset.pagina === 'noticias') return;
+  const campo = formulario.querySelector('#q');
+  const irAResultados = () => {
+    const termino = campo.value.trim();
+    location.href = termino ? `noticias.html?q=${encodeURIComponent(termino)}` : 'noticias.html';
+  };
+  let espera;
+  campo.addEventListener('input', () => {
+    clearTimeout(espera);
+    if (campo.value.trim()) espera = setTimeout(irAResultados, 400);
+  });
   formulario.addEventListener('submit', (evento) => {
     evento.preventDefault();
-    const termino = formulario.querySelector('#q').value.trim();
-    location.href = termino ? `noticias.html?q=${encodeURIComponent(termino)}` : 'noticias.html';
+    clearTimeout(espera);
+    irAResultados();
   });
 }
 

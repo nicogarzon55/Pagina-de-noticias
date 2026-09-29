@@ -11,14 +11,9 @@
  <div class="contenedor">
   <div class="header__top">
    <a class="logo" href="index.html">Poli Noticias</a>
-   <form class="buscador" role="search" id="form-buscador">
-    <label class="sr-only" for="q">Buscar noticias</label>
-    <input type="search" id="q" placeholder="Buscar noticias">
-    <button class="btn btn--verde" type="submit">Buscar</button>
-   </form>
    <div class="edicion" id="fecha-edicion">Edición nacional</div>
   </div>
-  <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="noticias.html" aria-current="page">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html">Contacto</a><span class="nav__sep"></span><a class="nav__cat" href="noticias.html?categoria=educación">Educación</a><a class="nav__cat" href="noticias.html?categoria=tecnológica">Tecnológica</a><a class="nav__cat" href="noticias.html?categoria=turismo">Turismo</a><a class="nav__cat" href="noticias.html?categoria=comercio">Comercio</a></nav>
+  <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="noticias.html" aria-current="page">Noticias</a><a href="favoritos.html">Favoritos</a><a href="contacto.html">Contacto</a><span class="nav__sep"></span><form class="buscador" role="search" id="form-buscador"><label class="sr-only" for="q">Buscar noticias</label><input type="search" id="q" placeholder="Buscar noticias" autocomplete="off"></form><span class="nav__sep"></span><a class="nav__cat" href="noticias.html?categoria=educación">Educación</a><a class="nav__cat" href="noticias.html?categoria=tecnológica">Tecnológica</a><a class="nav__cat" href="noticias.html?categoria=turismo">Turismo</a><a class="nav__cat" href="noticias.html?categoria=comercio">Comercio</a></nav>
  </div>
 </header>
 <main class="contenedor">
@@ -45,13 +40,6 @@
   <div class="exito" id="noticia-exito" role="status"><strong>Noticia publicada</strong>Ya aparece en el listado. <a class="card__enlace" href="#">Ver la noticia →</a></div>
  </form>
 </details>
-<div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoría">
- <button class="chip activo" type="button" data-categoria="todas" aria-pressed="true">Todas</button>
- <button class="chip" type="button" data-categoria="educación" aria-pressed="false">Educación</button>
- <button class="chip" type="button" data-categoria="tecnológica" aria-pressed="false">Tecnológica</button>
- <button class="chip" type="button" data-categoria="turismo" aria-pressed="false">Turismo</button>
- <button class="chip" type="button" data-categoria="comercio" aria-pressed="false">Comercio</button>
-</div>
 <div class="grid grid--2" id="noticias-grid"><p class="vacio">Cargando noticias…</p></div>
 <p class="vacio" id="sin-resultados" hidden>No hay noticias que coincidan con tu búsqueda o filtro. Prueba con otro.</p>
 <nav class="paginacion" id="paginacion" aria-label="Paginación"></nav>

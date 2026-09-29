@@ -38,11 +38,11 @@ function actualizarURL() {
   history.replaceState(null, '', consulta ? `?${consulta}` : location.pathname);
 }
 
+// Resalta en el menú superior la categoría que se está filtrando.
 function pintarFiltros() {
-  document.querySelectorAll('#filtros .chip').forEach((chip) => {
-    const activo = normalizar(chip.dataset.categoria) === normalizar(estado.categoria);
-    chip.classList.toggle('activo', activo);
-    chip.setAttribute('aria-pressed', String(activo));
+  document.querySelectorAll('.nav__cat').forEach((enlace) => {
+    const categoria = new URL(enlace.href).searchParams.get('categoria') || '';
+    enlace.classList.toggle('activo', normalizar(categoria) === normalizar(estado.categoria));
   });
 }
 
@@ -80,10 +80,14 @@ async function recargar() {
 }
 
 function activarFiltrosYBusqueda() {
-  document.getElementById('filtros').addEventListener('click', (evento) => {
-    const chip = evento.target.closest('.chip');
-    if (!chip) return;
-    estado.categoria = chip.dataset.categoria;
+  // Las categorías del menú filtran sin recargar la página; un segundo clic
+  // sobre la categoría activa vuelve a mostrar todas.
+  document.querySelector('.nav').addEventListener('click', (evento) => {
+    const enlace = evento.target.closest('.nav__cat');
+    if (!enlace) return;
+    evento.preventDefault();
+    const categoria = new URL(enlace.href).searchParams.get('categoria');
+    estado.categoria = normalizar(categoria) === normalizar(estado.categoria) ? 'todas' : categoria;
     estado.pagina = 1;
     pintarListado();
   });
@@ -91,6 +95,11 @@ function activarFiltrosYBusqueda() {
   const buscador = document.getElementById('form-buscador');
   const campoBusqueda = buscador.querySelector('#q');
   campoBusqueda.value = estado.busqueda;
+  // Si se llegó escribiendo desde otra página, se sigue escribiendo aquí.
+  if (estado.busqueda) {
+    campoBusqueda.focus();
+    campoBusqueda.setSelectionRange(campoBusqueda.value.length, campoBusqueda.value.length);
+  }
   buscador.addEventListener('submit', (evento) => evento.preventDefault());
   campoBusqueda.addEventListener('input', () => {
     estado.busqueda = campoBusqueda.value.trim();

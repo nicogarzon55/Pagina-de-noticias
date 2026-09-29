@@ -11,7 +11,7 @@
     "autor": "Marcela Ibáñez",
     "fecha": "2026-09-22",
     "lectura": 5,
-    "imagen": "https://picsum.photos/seed/poli-tablets/800/500",
+    "imagen": "img/noticias/1-tablets.jpg",
     "pieFoto": "Estudiantes de una sede rural en Boyacá.",
     "destacada": false
   },
@@ -27,8 +27,8 @@
     "autor": "Camilo Rueda",
     "fecha": "2026-09-20",
     "lectura": 4,
-    "imagen": "https://picsum.photos/seed/poli-app/800/500",
-    "pieFoto": "Pantalla de inicio de la aplicación.",
+    "imagen": "img/noticias/2-app.jpg",
+    "pieFoto": "Trámites universitarios desde el celular.",
     "destacada": false
   },
   {
@@ -43,7 +43,7 @@
     "autor": "Laura Méndez",
     "fecha": "2026-09-18",
     "lectura": 7,
-    "imagen": "https://picsum.photos/seed/poli-rutas/800/500",
+    "imagen": "img/noticias/3-rutas.jpg",
     "pieFoto": "Sendero en el páramo de Chingaza.",
     "destacada": true
   },
@@ -59,7 +59,7 @@
     "autor": "Andrés Pinzón",
     "fecha": "2026-09-17",
     "lectura": 6,
-    "imagen": "https://picsum.photos/seed/poli-pymes/800/500",
+    "imagen": "img/noticias/4-exportaciones.jpg",
     "pieFoto": "Bodega de una empresa exportadora en Cali.",
     "destacada": true
   },
@@ -75,7 +75,7 @@
     "autor": "Marcela Ibáñez",
     "fecha": "2026-09-16",
     "lectura": 3,
-    "imagen": "https://picsum.photos/seed/poli-biblioteca/800/500",
+    "imagen": "img/noticias/5-biblioteca.jpg",
     "pieFoto": "Sala de lectura de la biblioteca central.",
     "destacada": false
   },
@@ -91,7 +91,7 @@
     "autor": "Camilo Rueda",
     "fecha": "2026-09-15",
     "lectura": 5,
-    "imagen": "https://picsum.photos/seed/poli-buses/800/500",
+    "imagen": "img/noticias/6-buses.jpg",
     "pieFoto": "Prototipo del bus eléctrico.",
     "destacada": true
   },
@@ -107,7 +107,7 @@
     "autor": "Camilo Rueda",
     "fecha": "2026-09-14",
     "lectura": 6,
-    "imagen": "https://picsum.photos/seed/poli-datos/800/500",
+    "imagen": "img/noticias/7-centro-datos.jpg",
     "pieFoto": "Centro de datos, Medellín.",
     "destacada": false
   },
@@ -123,8 +123,8 @@
     "autor": "Laura Méndez",
     "fecha": "2026-09-12",
     "lectura": 4,
-    "imagen": "https://picsum.photos/seed/poli-aves/800/500",
-    "pieFoto": "Garza en la Ciénaga de la Virgen.",
+    "imagen": "img/noticias/8-aves.jpg",
+    "pieFoto": "Ostrero, pelícano pardo y flamencos del Caribe colombiano.",
     "destacada": false
   },
   {
@@ -139,7 +139,7 @@
     "autor": "Andrés Pinzón",
     "fecha": "2026-09-10",
     "lectura": 3,
-    "imagen": "https://picsum.photos/seed/poli-feria/800/500",
+    "imagen": "img/noticias/9-feria.jpg",
     "pieFoto": "Pabellón principal de la feria.",
     "destacada": false
   },
@@ -155,7 +155,7 @@
     "autor": "Marcela Ibáñez",
     "fecha": "2026-09-08",
     "lectura": 5,
-    "imagen": "https://picsum.photos/seed/poli-becas/800/500",
+    "imagen": "img/noticias/10-laboratorio.webp",
     "pieFoto": "Laboratorio de ingeniería.",
     "destacada": false
   }

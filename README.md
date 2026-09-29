@@ -65,5 +65,5 @@ módulo correspondiente.
 }
 ```
 
-Las imágenes actuales son de relleno (picsum.photos); si no cargan se muestra el recuadro
-rayado de la maqueta.
+Las imágenes están en `img/noticias/` (nombre: `<id>-<tema>`). Si una imagen no carga se
+muestra el recuadro rayado de la maqueta.

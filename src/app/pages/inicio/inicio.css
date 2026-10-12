@@ -1,0 +1,21 @@
+/* Bienvenida */
+.bienvenida{padding:1.6rem 0 1.2rem;border-bottom:1px solid var(--linea);text-align:center}
+.bienvenida h1{font:400 1.6rem/1.2 var(--serif);margin:0 0 .4rem}
+.bienvenida p{margin:0 auto;max-width:60ch;color:var(--tinta-suave)}
+
+/* Noticia de apertura */
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;padding:2rem 0;align-items:center}
+.hero h2{font:400 clamp(2rem,4.5vw,3.2rem)/1.1 var(--serif);margin:0 0 1rem}
+.hero p{max-width:52ch;color:var(--tinta-suave)}
+.hero .categoria{color:var(--verde)}
+.hero .categoria--comercio{color:var(--rojo)}
+.hero figure{margin:0}
+.hero__acciones{display:flex;gap:.8rem;flex-wrap:wrap}
+
+/* Banner de llamado a la acción */
+.cta{background:var(--tinta);color:var(--fondo);padding:1.6rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin:2rem 0}
+.cta p{margin:0;font:1.3rem var(--serif)}
+.cta__acciones{display:flex;gap:.8rem;flex-wrap:wrap}
+
+@media (max-width:900px){ .hero{grid-template-columns:1fr} }
+@media (max-width:560px){ .cta{padding:1.2rem} }

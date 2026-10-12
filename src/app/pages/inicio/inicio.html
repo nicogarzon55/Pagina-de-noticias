@@ -1,0 +1,65 @@
+<section class="bienvenida" aria-labelledby="bienvenida-titulo">
+  <h1 id="bienvenida-titulo">Bienvenido a Poli Noticias</h1>
+  <p>
+    Noticias de educación, tecnología, turismo y comercio en un solo lugar. Explora, guarda tus
+    favoritas y comparte las tuyas.
+  </p>
+</section>
+
+@switch (servicio.estado()) {
+  @case ('cargando') {
+    <p class="vacio">Cargando noticias…</p>
+  }
+  @case ('error') {
+    <div class="vacio" role="alert">
+      <p>No se pudieron cargar las noticias.</p>
+      <button class="btn btn--borde" type="button" (click)="servicio.cargar()">Reintentar</button>
+    </div>
+  }
+  @default {
+    @if (apertura(); as noticia) {
+      <!-- Noticia de apertura: interpolación, property binding y routerLink -->
+      <section class="hero" aria-labelledby="hero-titulo">
+        <div>
+          <p class="categoria" [class.categoria--comercio]="noticia.categoria === 'comercio'">
+            {{ noticia.categoria | capitalizar }}
+          </p>
+          <h2 id="hero-titulo">{{ noticia.titulo }}</h2>
+          <p>{{ noticia.resumen }}</p>
+          <p class="meta">Por {{ noticia.autor }} · {{ noticia.lectura }} min de lectura</p>
+          <div class="hero__acciones">
+            <a class="btn btn--acento" [routerLink]="['/noticias', noticia.id]">Leer noticia</a>
+            <a class="btn btn--borde" routerLink="/noticias">Explorar noticias</a>
+          </div>
+        </div>
+        <figure>
+          <app-imagen-noticia [noticia]="noticia" etiqueta="Foto de apertura" />
+          @if (noticia.pieFoto) {
+            <figcaption class="pie-foto">{{ noticia.pieFoto }}</figcaption>
+          }
+        </figure>
+      </section>
+
+      <section class="seccion" aria-labelledby="destacadas-titulo">
+        <h2 class="seccion__titulo" id="destacadas-titulo">Noticias destacadas</h2>
+        <div class="grid">
+          @for (destacada of destacadas(); track destacada.id) {
+            <app-noticia-card [noticia]="destacada" />
+          } @empty {
+            <p class="vacio">No hay más noticias por ahora.</p>
+          }
+        </div>
+      </section>
+    } @else {
+      <p class="vacio">No hay noticias publicadas todavía.</p>
+    }
+  }
+}
+
+<aside class="cta">
+  <p>¿Tienes una noticia para contarnos?</p>
+  <div class="cta__acciones">
+    <a class="btn btn--acento" routerLink="/noticias" fragment="panel-crear">Publicar noticia</a>
+    <a class="btn btn--borde-claro" routerLink="/contacto">Contáctanos</a>
+  </div>
+</aside>

@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="contenedor">
+    <div class="header__top">
+      <a class="logo" routerLink="/">Poli Noticias</a>
+      <!-- Interpolación con pipes: fecha de hoy en español con la primera letra en mayúscula -->
+      <div class="edicion">{{ hoy | date: 'fullDate' | capitalizar }} · Edición nacional</div>
+    </div>
+
+    <nav class="nav" aria-label="Principal">
+      <a routerLink="/" routerLinkActive ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+      <a routerLink="/noticias" routerLinkActive ariaCurrentWhenActive="page">Noticias</a>
+      <a routerLink="/favoritos" routerLinkActive ariaCurrentWhenActive="page">Favoritos</a>
+      <a routerLink="/contacto" routerLinkActive ariaCurrentWhenActive="page">Contacto</a>
+
+      <form class="buscador" role="search" (ngSubmit)="alEnviar()">
+        <label class="sr-only" for="q">Buscar noticias</label>
+        <!-- Two-way binding: el campo y la señal busqueda siempre tienen el mismo valor -->
+        <input
+          type="search"
+          id="q"
+          name="q"
+          placeholder="Buscar noticias"
+          autocomplete="off"
+          [(ngModel)]="busqueda"
+          (ngModelChange)="alEscribir()"
+        />
+      </form>
+
+      @for (categoria of categorias; track categoria) {
+        <a
+          class="nav__cat"
+          routerLink="/noticias"
+          [queryParams]="parametrosCategoria(categoria)"
+          [class.activo]="esCategoriaActiva(categoria)"
+          [attr.aria-current]="esCategoriaActiva(categoria) ? 'true' : null"
+        >{{ categoria | capitalizar }}</a>
+      }
+    </nav>
+  </div>
+</header>

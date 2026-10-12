@@ -1,0 +1,68 @@
+@switch (servicio.estado()) {
+  @case ('cargando') {
+    <p class="vacio">Cargando noticia…</p>
+  }
+  @case ('error') {
+    <div class="vacio" role="alert">
+      <p>No se pudo cargar la noticia.</p>
+      <button class="btn btn--borde" type="button" (click)="servicio.cargar()">Reintentar</button>
+    </div>
+  }
+  @default {
+    @if (noticia(); as noticia) {
+      <article class="detalle">
+        <div>
+          <p class="categoria" [class.categoria--comercio]="noticia.categoria === 'comercio'">
+            {{ noticia.categoria | capitalizar }}
+          </p>
+          <h1>{{ noticia.titulo }}</h1>
+          <p class="meta">
+            Por {{ noticia.autor }} · {{ noticia.fecha | date: 'longDate' }} · {{ noticia.lectura }} min de lectura
+          </p>
+
+          <figure>
+            <app-imagen-noticia [noticia]="noticia" etiqueta="Imagen principal" />
+            @if (noticia.pieFoto) {
+              <figcaption class="pie-foto">{{ noticia.pieFoto }}</figcaption>
+            }
+          </figure>
+
+          <div class="detalle__cuerpo">
+            @for (parrafo of noticia.cuerpo; track $index) {
+              <p>{{ parrafo }}</p>
+            }
+          </div>
+
+          <div class="detalle__acciones">
+            <!-- Event binding (click) y property/attribute binding sincronizados con la señal esFavorita -->
+            <button
+              class="btn btn--verde"
+              type="button"
+              [class.activo]="esFavorita()"
+              [attr.aria-pressed]="esFavorita()"
+              (click)="alternarFavorito(noticia.id)"
+            >{{ esFavorita() ? '♥ En favoritos' : '♡ Agregar a favoritos' }}</button>
+            <a class="btn btn--borde" routerLink="/contacto" [queryParams]="{ noticia: noticia.titulo }">Contactar</a>
+          </div>
+        </div>
+
+        <aside class="relacionadas" aria-labelledby="relacionadas-titulo">
+          <h2 id="relacionadas-titulo">Relacionadas</h2>
+          @for (relacionada of relacionadas(); track relacionada.id) {
+            <a [routerLink]="['/noticias', relacionada.id]">
+              <app-imagen-noticia [noticia]="relacionada" />
+              <h3>{{ relacionada.titulo }}</h3>
+            </a>
+          } @empty {
+            <p class="meta">No hay otras noticias.</p>
+          }
+        </aside>
+      </article>
+    } @else {
+      <p class="vacio">
+        La noticia que buscas no existe o fue eliminada.
+        <a class="card__enlace" routerLink="/noticias">Ver todas las noticias</a>
+      </p>
+    }
+  }
+}

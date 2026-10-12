@@ -1,0 +1,7 @@
+form{padding:0 1.2rem 1.2rem}
+.campo input,.campo select,.campo textarea{background:var(--fondo)}
+.panel__fila{display:grid;grid-template-columns:1fr 1fr;gap:0 1.2rem}
+.panel__acciones{display:flex;gap:.8rem;flex-wrap:wrap}
+.exito .card__enlace{display:block;margin-top:.4rem}
+
+@media (max-width:560px){ .panel__fila{grid-template-columns:1fr} }

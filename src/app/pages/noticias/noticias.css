@@ -1,0 +1,4 @@
+/* Panel desplegable para publicar noticias (mini CRUD) */
+.panel{border:1px solid var(--linea);margin:1rem 0 1.5rem;background:#ece5d3}
+.panel summary{padding:.8rem 1.2rem;cursor:pointer;font:700 .8rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--verde)}
+.meta{margin:0 0 1rem}

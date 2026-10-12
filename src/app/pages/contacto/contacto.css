@@ -1,0 +1,13 @@
+.intro{margin-bottom:2rem}
+.contacto{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;padding-bottom:3rem}
+.contador{display:block;font-size:.75rem;color:var(--tinta-suave);margin-top:.25rem}
+
+.info-contacto{border-left:1px solid var(--linea);padding-left:2rem}
+.info-contacto h2{font:700 .8rem var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.info-contacto dt{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin-top:1rem}
+.info-contacto dd{margin:0}
+
+@media (max-width:900px){
+  .contacto{grid-template-columns:1fr}
+  .info-contacto{border-left:0;padding-left:0;border-top:1px solid var(--linea);padding-top:1.5rem}
+}

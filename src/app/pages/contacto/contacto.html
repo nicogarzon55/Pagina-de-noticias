@@ -1,0 +1,61 @@
+<h1 class="pagina-titulo">Contáctanos</h1>
+<p class="meta intro">
+  ¿Tienes una noticia, una corrección o una sugerencia? Escríbenos y te responderemos en menos de 48 horas.
+</p>
+
+<div class="contacto">
+  <form #elementoFormulario [formGroup]="formulario" (ngSubmit)="enviar()" novalidate>
+    <div class="campo" [class.invalido]="mostrarError('nombre')">
+      <label for="nombre">Nombre *</label>
+      <input type="text" id="nombre" formControlName="nombre" autocomplete="name" aria-describedby="error-nombre"
+             [attr.aria-invalid]="mostrarError('nombre')" />
+      <span class="error" id="error-nombre">Escribe tu nombre (mínimo 3 letras).</span>
+    </div>
+
+    <div class="campo" [class.invalido]="mostrarError('correo')">
+      <label for="correo">Correo electrónico *</label>
+      <input type="email" id="correo" formControlName="correo" autocomplete="email" aria-describedby="error-correo"
+             [attr.aria-invalid]="mostrarError('correo')" />
+      <span class="error" id="error-correo">Escribe un correo válido, por ejemplo nombre&#64;dominio.com.</span>
+    </div>
+
+    <div class="campo" [class.invalido]="mostrarError('asunto')">
+      <label for="asunto">Asunto *</label>
+      <select id="asunto" formControlName="asunto" aria-describedby="error-asunto"
+              [attr.aria-invalid]="mostrarError('asunto')">
+        <option value="">Selecciona un motivo</option>
+        @for (asunto of asuntos; track asunto) {
+          <option [value]="asunto">{{ asunto }}</option>
+        }
+      </select>
+      <span class="error" id="error-asunto">Selecciona un motivo de contacto.</span>
+    </div>
+
+    <div class="campo" [class.invalido]="mostrarError('mensaje')">
+      <label for="mensaje">Mensaje *</label>
+      <textarea id="mensaje" formControlName="mensaje" aria-describedby="error-mensaje"
+                [attr.aria-invalid]="mostrarError('mensaje')"></textarea>
+      <!-- El contador se actualiza con cada tecla gracias al binding con el valor del control -->
+      <span class="contador">{{ formulario.controls.mensaje.value.trim().length }} / 20 caracteres mínimo</span>
+      <span class="error" id="error-mensaje">El mensaje debe tener al menos 20 caracteres.</span>
+    </div>
+
+    <button class="btn btn--acento" type="submit">Enviar mensaje</button>
+
+    @if (enviado(); as remitente) {
+      <div class="exito" role="status">
+        <strong>Mensaje enviado correctamente</strong>
+        Gracias, {{ remitente.nombre }}. Te responderemos pronto a {{ remitente.correo }}.
+      </div>
+    }
+  </form>
+
+  <aside class="info-contacto">
+    <h2>Información de contacto</h2>
+    <dl>
+      <dt>Dirección</dt><dd>Calle 57 # 3 - 00, Bogotá</dd>
+      <dt>Teléfono</dt><dd>(601) 000 0000</dd>
+      <dt>Redes sociales</dt><dd>&#64;polinoticias</dd>
+    </dl>
+  </aside>
+</div>

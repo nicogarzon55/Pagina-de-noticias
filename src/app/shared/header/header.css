@@ -1,0 +1,21 @@
+/* Encabezado fijo con logotipo, fecha, menú, buscador y categorías */
+.header{border-top:6px solid var(--tinta);background:var(--fondo);position:sticky;top:0;z-index:10}
+.header__top{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;padding:1rem 0 .6rem;flex-wrap:wrap}
+.logo{font:400 2.4rem/1 var(--serif);letter-spacing:-.5px}
+.edicion{font-size:.72rem;letter-spacing:.08em;color:var(--tinta-suave);text-align:right}
+
+.nav{border-top:1px solid var(--tinta);border-bottom:1px solid var(--tinta);display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.6rem;padding:.55rem 0;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.nav a{padding-bottom:2px;border-bottom:2px solid transparent}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--verde);border-color:var(--verde)}
+.nav__cat{color:var(--tinta-suave)}
+.nav__cat.activo{color:var(--verde);border-color:var(--verde)}
+
+.buscador{display:flex;justify-content:center;flex:1 1 160px;min-width:0}
+.buscador input{padding:.3rem .7rem;border:1px solid var(--linea);background:#fff8;font:inherit;font-size:.85rem;letter-spacing:normal;text-transform:none;width:100%;max-width:260px}
+
+@media (max-width:560px){
+  .logo{font-size:1.9rem}
+  .edicion{text-align:left}
+  .buscador{order:1;flex-basis:100%}
+  .buscador input{max-width:none}
+}

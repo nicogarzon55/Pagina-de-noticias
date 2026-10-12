@@ -1,0 +1,63 @@
+<form #elementoFormulario [formGroup]="formulario" (ngSubmit)="publicar()" novalidate>
+  <div class="panel__fila">
+    <div class="campo" [class.invalido]="mostrarError('titulo')">
+      <label for="n-titulo">Título *</label>
+      <input type="text" id="n-titulo" formControlName="titulo" maxlength="120" aria-describedby="error-n-titulo"
+             [attr.aria-invalid]="mostrarError('titulo')" />
+      <span class="error" id="error-n-titulo">Escribe un título de 10 a 120 caracteres.</span>
+    </div>
+    <div class="campo" [class.invalido]="mostrarError('categoria')">
+      <label for="n-categoria">Categoría *</label>
+      <select id="n-categoria" formControlName="categoria" aria-describedby="error-n-categoria"
+              [attr.aria-invalid]="mostrarError('categoria')">
+        <option value="">Selecciona una categoría</option>
+        @for (categoria of categorias; track categoria) {
+          <option [value]="categoria">{{ categoria | capitalizar }}</option>
+        }
+      </select>
+      <span class="error" id="error-n-categoria">Selecciona una categoría.</span>
+    </div>
+  </div>
+
+  <div class="campo" [class.invalido]="mostrarError('resumen')">
+    <label for="n-resumen">Descripción breve *</label>
+    <input type="text" id="n-resumen" formControlName="resumen" maxlength="160" aria-describedby="error-n-resumen"
+           [attr.aria-invalid]="mostrarError('resumen')" />
+    <span class="error" id="error-n-resumen">Escribe una descripción de 10 a 160 caracteres.</span>
+  </div>
+
+  <div class="campo" [class.invalido]="mostrarError('cuerpo')">
+    <label for="n-cuerpo">Contenido completo *</label>
+    <textarea id="n-cuerpo" formControlName="cuerpo" aria-describedby="error-n-cuerpo"
+              [attr.aria-invalid]="mostrarError('cuerpo')"></textarea>
+    <span class="error" id="error-n-cuerpo">El contenido debe tener al menos 40 caracteres. Separa los párrafos con Enter.</span>
+  </div>
+
+  <div class="panel__fila">
+    <div class="campo" [class.invalido]="mostrarError('autor')">
+      <label for="n-autor">Autor *</label>
+      <input type="text" id="n-autor" formControlName="autor" autocomplete="name" aria-describedby="error-n-autor"
+             [attr.aria-invalid]="mostrarError('autor')" />
+      <span class="error" id="error-n-autor">Escribe el nombre del autor (mínimo 3 letras).</span>
+    </div>
+    <div class="campo" [class.invalido]="mostrarError('imagen')">
+      <label for="n-imagen">URL de la imagen (opcional)</label>
+      <input type="url" id="n-imagen" formControlName="imagen" placeholder="https://…" aria-describedby="error-n-imagen"
+             [attr.aria-invalid]="mostrarError('imagen')" />
+      <span class="error" id="error-n-imagen">Escribe una URL válida que empiece por http:// o https://.</span>
+    </div>
+  </div>
+
+  <div class="panel__acciones">
+    <button class="btn btn--acento" type="submit">Publicar noticia</button>
+    <button class="btn btn--borde" type="button" (click)="restaurar()">Restaurar noticias originales</button>
+  </div>
+
+  @if (ultima(); as noticia) {
+    <div class="exito" role="status">
+      <strong>Noticia publicada</strong>
+      «{{ noticia.titulo }}» ya aparece en el listado.
+      <a class="card__enlace" [routerLink]="['/noticias', noticia.id]">Ver la noticia →</a>
+    </div>
+  }
+</form>

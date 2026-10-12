@@ -1,0 +1,34 @@
+<h1 class="pagina-titulo" id="titulo-listado">{{ titulo() }}</h1>
+
+<details class="panel" id="panel-crear" [open]="panelAbierto">
+  <summary>+ Publicar una noticia</summary>
+  <!-- Comunicación hijo → padre: el formulario avisa con (publicada) -->
+  <app-form-noticia (publicada)="alPublicar()" />
+</details>
+
+@switch (servicio.estado()) {
+  @case ('cargando') {
+    <p class="vacio">Cargando noticias…</p>
+  }
+  @case ('error') {
+    <div class="vacio" role="alert">
+      <p>No se pudieron cargar las noticias.</p>
+      <button class="btn btn--borde" type="button" (click)="servicio.cargar()">Reintentar</button>
+    </div>
+  }
+  @default {
+    @if (filtradas().length > 0) {
+      <p class="meta" aria-live="polite">
+        {{ filtradas().length }} {{ filtradas().length === 1 ? 'noticia' : 'noticias' }}
+      </p>
+      <div class="grid grid--2">
+        @for (noticia of visibles(); track noticia.id) {
+          <app-noticia-card [noticia]="noticia" [eliminable]="true" (eliminar)="eliminar($event)" />
+        }
+      </div>
+      <app-paginacion [totalPaginas]="totalPaginas()" [paginaActual]="paginaVisible()" (cambiar)="irAPagina($event)" />
+    } @else {
+      <p class="vacio">No hay noticias que coincidan con tu búsqueda o filtro. Prueba con otro.</p>
+    }
+  }
+}

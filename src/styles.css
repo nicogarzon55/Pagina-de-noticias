@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Poli Noticias · estilos globales
+   Aquí solo van las variables de diseño y las clases que comparten varias
+   vistas (botones, cuadrículas, formularios, mensajes). Los estilos propios
+   de cada componente están en su archivo .css o en su propiedad `styles`.
+   ========================================================================== */
+
+/* ----- Variables de diseño ----- */
+:root{
+  /* Fondos y líneas: dirección de color "Archivo" (papel de periódico) */
+  --fondo:#f2ede0; --fondo-2:#e9e2d0; --linea:#d8cfb8;
+  /* Tinta: texto principal y secundario */
+  --tinta:#211f1c; --tinta-suave:#5f5a50;
+  /* Color primario (verde) y de acento (rojo) */
+  --verde:#1a6b5a; --verde-osc:#134f43; --rojo:#b53a24; --rojo-osc:#922d1b;
+  /* Tipografías: serif para titulares, sans para la interfaz */
+  --serif:Georgia,"Times New Roman",serif; --sans:"Helvetica Neue",Arial,sans-serif;
+  --ancho:1080px;
+}
+
+/* ----- Base ----- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.6 var(--sans)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--verde);outline-offset:2px}
+main:focus{outline:none}
+[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.contenedor{width:min(var(--ancho),100% - 2rem);margin-inline:auto}
+/* Al enfocar un campo con error o saltar a un ancla, que el encabezado fijo no lo tape */
+:where(input,select,textarea,details,h1){scroll-margin-top:11rem}
+
+/* Enlace "Saltar al contenido": visible solo al recibir el foco con el teclado */
+.saltar{position:absolute;left:1rem;top:-3rem;z-index:20;background:var(--tinta);color:var(--fondo);padding:.5rem 1rem}
+.saltar:focus{top:.5rem}
+
+/* ----- Botones ----- */
+.btn{display:inline-block;padding:.7rem 1.3rem;border:2px solid transparent;font:600 .8rem var(--sans);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s;color:inherit}
+.btn--acento{background:var(--rojo);color:#fff}.btn--acento:hover{background:var(--rojo-osc)}
+.btn--verde{background:var(--verde);color:#fff}.btn--verde:hover{background:var(--verde-osc)}
+.btn--borde{border-color:var(--tinta);background:transparent}.btn--borde:hover{background:var(--tinta);color:var(--fondo)}
+.btn--borde-claro{border-color:var(--fondo);color:var(--fondo);background:transparent}.btn--borde-claro:hover{background:var(--fondo);color:var(--tinta)}
+.btn.activo{background:var(--rojo)}
+
+/* ----- Textos compartidos ----- */
+.categoria{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin:0 0 .4rem}
+.categoria--comercio{color:var(--rojo)}
+.meta{font-size:.78rem;color:var(--tinta-suave)}
+.pie-foto{font-size:.78rem;color:var(--tinta-suave);margin-top:.4rem}
+.pagina-titulo{font:400 2.4rem/1.1 var(--serif);margin:2rem 0 .5rem}
+.vacio{text-align:center;color:var(--tinta-suave);padding:3rem 0}
+.card__enlace{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--verde)}
+.card__enlace:hover{text-decoration:underline}
+
+/* ----- Secciones y cuadrículas de tarjetas ----- */
+.seccion{padding:2rem 0;border-top:1px solid var(--linea)}
+.seccion__titulo{font:700 .8rem var(--sans);letter-spacing:.12em;text-transform:uppercase;margin:0 0 1.2rem}
+.grid{display:grid;gap:1.6rem;grid-template-columns:repeat(3,1fr)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.grid>.vacio{grid-column:1/-1}
+
+/* ----- Formularios (contacto y publicar noticia) ----- */
+.campo{margin-bottom:1.1rem}
+.campo label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.campo input,.campo select,.campo textarea{width:100%;padding:.7rem;border:1px solid var(--linea);background:#ece5d3;font:inherit;color:var(--tinta)}
+.campo textarea{min-height:130px;resize:vertical}
+.campo input:focus,.campo select:focus,.campo textarea:focus{border-color:var(--verde);background:#fff}
+.campo.invalido input,.campo.invalido select,.campo.invalido textarea{border-color:var(--rojo)}
+.error{display:none;color:var(--rojo);font-size:.8rem;margin-top:.25rem}
+.campo.invalido .error{display:block}
+.exito{border:1.5px solid var(--verde);background:#ece5d3;padding:.9rem 1rem;margin-top:1.2rem;font-size:.9rem}
+.exito strong{color:var(--verde);display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+
+/* ----- Puntos de quiebre ----- */
+@media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:560px){ .grid,.grid--2{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
